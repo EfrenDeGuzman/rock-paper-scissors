@@ -28,24 +28,28 @@ function playRound(playerSelection, computerSelection) {
             result = "You Win! Paper beats Rock";
         }
         else { //computerSelection === "scissors"
-            result = "You Lose! Scissors beats paper";
+            result = "You Lose! Scissors beats Paper";
         }
     }
 
-    else { //playerSelection === "scissors"
+    else if (playerSelection === "scissors") {
         if (computerSelection === "paper") {
             result = "You Win! Scissors beats Paper";
         }
         else { //computerSelection === "rock"
-            result = "You Lose! Rock beats Paper";
+            result = "You Lose! Rock beats Scissors";
         }
+    }
+
+    else {
+        result = ""
     }
 
     return result;
 
 }
 
-const playerSelection = "rock";
+const playerSelection = "sCissors";
 const computerSelection = getComputerChoice();
 
 console.log(playRound(playerSelection, computerSelection));
