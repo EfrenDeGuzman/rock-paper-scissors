@@ -42,15 +42,21 @@ function playRound(playerSelection, computerSelection) {
     }
 
     else {
-        result = ""
+        result = "";
     }
 
     return result;
 
 }
 
-const playerSelection = "sCissors";
-const computerSelection = getComputerChoice();
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt("Rock, Paper or Scissors?")
+        let computerSelection = getComputerChoice();
 
-console.log(playRound(playerSelection, computerSelection));
+        console.log(playRound(playerSelection, computerSelection));
+    }
+}
+
+game();
 
