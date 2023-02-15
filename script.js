@@ -8,33 +8,40 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
+    let result = "";
+
     if (playerSelection === computerSelection) {
-        return "It's a Tie!"
+        result = "It's a Tie!";
     }
 
-    if (playerSelection === "rock" && computerSelection === "scissors") {
-        return "You Win! Rock beats Scissors"
-    }
-    
-    if (playerSelection === "rock" && computerSelection === "paper") {
-        return "You Lose! Paper beats Rock"
-    }
-
-    if (playerSelection === "paper" && computerSelection === "rock") {
-        return "You Win! Paper beats Rock"
-    }
-    
-    if (playerSelection === "paper" && computerSelection === "scissors") {
-        return "You Lose! Scissors beats paper"
+    else if (playerSelection === "rock") {
+        if (computerSelection === "scissors") {
+            result = "You Win! Rock beats Scissors";
+        }
+        else { //computerSelection === "paper"
+            result = "You Lose! Paper beats Rock";
+        }
     }
 
-    if (playerSelection === "scissors" && computerSelection === "paper") {
-        return "You Win! Scissors beats Paper"
+    else if (playerSelection === "paper") {
+        if (computerSelection === "rock") {
+            result = "You Win! Paper beats Rock";
+        }
+        else { //computerSelection === "scissors"
+            result = "You Lose! Scissors beats paper";
+        }
     }
-    
-    if (playerSelection === "scissors" && computerSelection === "rock") {
-        return "You Lose! Rock beats Paper"
+
+    else { //playerSelection === "scissors"
+        if (computerSelection === "paper") {
+            result = "You Win! Scissors beats Paper";
+        }
+        else { //computerSelection === "rock"
+            result = "You Lose! Rock beats Paper";
+        }
     }
+
+    return result;
 
 }
 
